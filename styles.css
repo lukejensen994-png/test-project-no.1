@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef6ff 0%, #f7f2ff 52%, #fff7ed 100%);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.test-panel {
+  width: min(100%, 420px);
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #d8e0ec;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(23, 32, 51, 0.12);
+}
+
+.image-card {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #86d6ff 0%, #d9f4ff 52%, #3aa6b9 53%, #176b87 100%);
+  margin-bottom: 24px;
+}
+
+.sun {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  top: 26px;
+  right: 44px;
+  background: #ffd166;
+  box-shadow: 0 0 0 12px rgba(255, 209, 102, 0.28);
+}
+
+.wave {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.wave-one {
+  bottom: 48px;
+}
+
+.wave-two {
+  bottom: 18px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+p {
+  min-height: 48px;
+  margin: 0 0 22px;
+  color: #4c5b70;
+  line-height: 1.5;
+}
+
+button {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: #176b87;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0f5369;
+}
+
+button:active {
+  transform: translateY(1px);
+}
