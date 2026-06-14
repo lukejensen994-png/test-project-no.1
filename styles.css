@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  background: #eceff3;
+  background: #eef1f5;
 }
 
 * {
@@ -16,7 +16,7 @@ body {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.95), rgba(225, 230, 238, 0.88) 38%, #c7ced8 100%);
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.98), rgba(226, 231, 238, 0.92) 42%, #cbd2dc 100%);
 }
 
 .stage {
@@ -27,45 +27,87 @@ body {
   perspective: 900px;
 }
 
-.red-button {
-  width: min(46vw, 220px);
+.button-base {
+  position: relative;
+  width: min(68vw, 320px);
   aspect-ratio: 1;
-  border: 0;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 30%, #ffffff 0 9%, #dfe4ea 31%, #aab3bf 68%, #737e8b 100%);
+  box-shadow:
+    inset 0 12px 16px rgba(255, 255, 255, 0.78),
+    inset 0 -20px 28px rgba(75, 86, 101, 0.4),
+    0 18px 34px rgba(33, 42, 56, 0.26),
+    0 4px 0 #8f99a6;
+}
+
+.button-base::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 78%, rgba(86, 96, 109, 0.42), rgba(255, 255, 255, 0) 58%),
+    linear-gradient(180deg, #8e98a5 0%, #c8d0d8 47%, #f5f7f9 100%);
+  box-shadow:
+    inset 0 10px 18px rgba(54, 61, 72, 0.34),
+    inset 0 -8px 18px rgba(255, 255, 255, 0.7);
+}
+
+.red-button {
+  position: relative;
+  z-index: 1;
+  width: 68%;
+  aspect-ratio: 1 / 0.56;
+  border: 0;
+  border-radius: 50% / 42%;
   cursor: pointer;
   background:
-    radial-gradient(circle at 37% 28%, #ff8a8a 0 12%, #f72d2d 31%, #bf0d16 62%, #71070d 100%);
+    radial-gradient(ellipse at 38% 18%, rgba(255, 255, 255, 0.72) 0 10%, rgba(255, 255, 255, 0.12) 22%, transparent 38%),
+    linear-gradient(180deg, #ff5a58 0%, #e5141d 42%, #b70712 72%, #78070d 100%);
   box-shadow:
-    inset 0 18px 22px rgba(255, 255, 255, 0.38),
-    inset 0 -24px 30px rgba(80, 0, 0, 0.45),
-    0 18px 0 #6d070c,
-    0 24px 0 #4d0508,
-    0 38px 42px rgba(30, 36, 48, 0.38);
-  transform: translateY(-12px) rotateX(10deg) scale(1);
+    inset 0 10px 12px rgba(255, 255, 255, 0.42),
+    inset 0 -12px 18px rgba(91, 0, 4, 0.52),
+    0 15px 0 #76080d,
+    0 20px 0 #500609,
+    0 28px 28px rgba(35, 41, 53, 0.34);
+  transform: translateY(-22px) rotateX(9deg);
   transform-origin: center bottom;
   transition:
-    transform 420ms cubic-bezier(0.18, 0.78, 0.24, 1),
-    box-shadow 420ms cubic-bezier(0.18, 0.78, 0.24, 1),
-    filter 420ms ease;
+    transform 620ms cubic-bezier(0.2, 0.82, 0.2, 1),
+    box-shadow 620ms cubic-bezier(0.2, 0.82, 0.2, 1),
+    filter 620ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 
+.red-button::after {
+  content: "";
+  position: absolute;
+  inset: 12% 18% auto;
+  height: 22%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.05));
+  filter: blur(0.2px);
+}
+
 .red-button:hover {
-  filter: brightness(1.04) saturate(1.04);
+  filter: brightness(1.03) saturate(1.04);
 }
 
 .red-button:active {
-  transform: translateY(12px) rotateX(6deg) scale(0.985);
+  transform: translateY(2px) rotateX(5deg) scale(0.995);
   box-shadow:
-    inset 0 12px 20px rgba(255, 255, 255, 0.25),
-    inset 0 -14px 22px rgba(70, 0, 0, 0.52),
-    0 5px 0 #6d070c,
-    0 8px 0 #4d0508,
-    0 18px 24px rgba(30, 36, 48, 0.3);
-  transition-duration: 560ms;
+    inset 0 7px 10px rgba(255, 255, 255, 0.3),
+    inset 0 -8px 14px rgba(86, 0, 4, 0.56),
+    0 4px 0 #76080d,
+    0 7px 0 #500609,
+    0 14px 20px rgba(35, 41, 53, 0.28);
+  transition-duration: 720ms;
 }
 
 .red-button:focus-visible {
-  outline: 4px solid rgba(40, 96, 255, 0.45);
-  outline-offset: 10px;
+  outline: 4px solid rgba(37, 99, 235, 0.42);
+  outline-offset: 14px;
 }
