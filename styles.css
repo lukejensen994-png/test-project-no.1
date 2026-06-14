@@ -32,7 +32,7 @@ body {
   position: relative;
   display: grid;
   justify-items: center;
-  gap: 34px;
+  gap: 26px;
 }
 
 .button-base {
@@ -129,34 +129,12 @@ body {
   text-align: center;
 }
 
-.confetti-piece {
-  position: fixed;
-  left: var(--start-x);
-  top: var(--start-y);
-  width: var(--size);
-  height: calc(var(--size) * 1.6);
-  border-radius: 2px;
-  background: var(--color);
-  pointer-events: none;
-  z-index: 10;
-  animation: confetti-burst 1200ms cubic-bezier(0.16, 0.72, 0.24, 1) forwards;
-}
-
-@keyframes confetti-burst {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-
-  72% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform:
-      translate(calc(-50% + var(--fly-x)), calc(-50% + var(--fly-y)))
-      rotate(var(--spin))
-      scale(0.72);
-  }
+.countdown {
+  min-height: 1.1em;
+  margin: 0;
+  color: #bf0612;
+  font-size: clamp(3rem, 12vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
 }
